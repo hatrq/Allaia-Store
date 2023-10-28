@@ -12,7 +12,7 @@ CREATE TABLE user(
                      city varchar(255),
                      postalcode int,
                      country varchar(50),
-                     phone int(11),
+                     phone varchar(10),
                      id_role int,
 
                      PRIMARY KEY(id)
