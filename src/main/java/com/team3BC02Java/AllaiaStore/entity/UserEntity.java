@@ -2,6 +2,8 @@ package com.team3BC02Java.AllaiaStore.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity(name = "user")
 public class UserEntity {
     @Id
@@ -26,6 +28,17 @@ public class UserEntity {
     @ManyToOne
     @JoinColumn(name = "id_role")
     private RoleEntity role;
+
+    @OneToMany(mappedBy = "user")
+    private List<BlogEntity> blogs;
+
+    public List<BlogEntity> getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(List<BlogEntity> blogs) {
+        this.blogs = blogs;
+    }
 
     public int getId() {
         return id;
